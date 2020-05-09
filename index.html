@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jey Vega</title>
-    <link  rel="icon"   href="images/icons/favicon.png" type="image/png" />
+    <link rel="icon" href="images/icons/favicon.png" type="image/png" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <script src="js/jquery-3.1.1.min.js"></script>
-    
+
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -26,7 +26,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" id="navbarOptions">
                 <li class="nav-item active">
                     <a class="nav-link" href="section1">Inicio <span class="sr-only">(current)</span></a>
                 </li>
@@ -225,7 +225,7 @@
                     <!-- end .col-sm-4 -->
                     <div class="col-sm-4">
                         <h4>Connect</h4>
-                        <div class="social-icons"  id="socialMedia">
+                        <div class="social-icons" id="socialMedia">
                             <a href="https://www.facebook.com/andres.vega.58" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="https://www.instagram.com/jey_vega/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="https://www.linkedin.com/in/jeyson-andr%C3%A9s-vega-romero-1973b1141/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -274,13 +274,17 @@
         <div class="slide-out-widgets">
             <div class="slide-out-widget">
                 <h4>Drink A Coffee With Me Today</h4>
-                <form class="needs-validation" novalidate>
+                <script type="text/javascript">
+                    var submitted = false;
+                </script>
+                <form class="needs-validation" novalidate name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSewJTae9yDzaEMbn_mYFAuSSaALB1iXuWiQBju-bxvI6zsTzg/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
+                    <!-- <form class="needs-validation" novalidate name="gform" id="gform" enctype="text/plain" action="" target="hidden_iframe" onsubmit="submitted=true;"> -->
                     <div class="form-row">
                         <div class="col-md-3 mb-3">
                             <label for="validationCustom01">Nombre</label>
                         </div>
                         <div class="col-md-9 mb-3">
-                            <input type="text" class="form-control" id="validationCustom01" value="" required>
+                            <input type="text" class="form-control" value="" name="entry.463664636" id="entry.463664636" required>
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="valid-feedback">
@@ -290,10 +294,10 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-3 mb-3">
-                            <label for="validationCustom01">Nombre</label>
+                            <label for="validationCustom01">Correo</label>
                         </div>
                         <div class="col-md-9 mb-3">
-                            <input type="text" class="form-control" id="validationCustom01" value="" required>
+                            <input type="text" class="form-control" value="" name="entry.1564831676" id="entry.1564831676" required>
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="valid-feedback">
@@ -303,10 +307,10 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-3 mb-3">
-                            <label for="validationCustom01">Nombre</label>
+                            <label for="validationCustom01">Mensaje</label>
                         </div>
                         <div class="col-md-9 mb-3">
-                            <input type="text" class="form-control" id="validationCustom01" value="" required>
+                            <input type="text" class="form-control" value="" name="entry.754622623" id="entry.754622623" required>
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="valid-feedback">
@@ -315,8 +319,9 @@
                         </div>
                     </div>
                     <div class="col align-self-center" style="text-align: center;">
-                        <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+                        <input class="btn btn-primary" type="submit">
                     </div>
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
                 </form>
                 <!-- end contact-form -->
             </div>

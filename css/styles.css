@@ -307,7 +307,8 @@ textarea {
 #section1 {
     /* background-color: black; */
 }
-#section1 .blockInfo{
+
+#section1 .blockInfo {
     color: white;
     width: auto;
     height: auto;
@@ -318,11 +319,11 @@ textarea {
     margin: 200px 0 0 200px;
 }
 
-#section1 .blockInfo hr{
+#section1 .blockInfo hr {
     border-color: white;
-} 
+}
 
-.bgMain{
+.bgMain {
     background-color: #32a3b5d9;
 }
 
@@ -331,11 +332,11 @@ textarea {
     float: right;
 }
 
-.sections-wraper section{
+.sections-wraper section {
     background-color: white;
 }
 
-#section1{
+#section1 {
     background-color: unset;
 }
 
@@ -348,4 +349,13 @@ textarea {
         bottom: 40px;
         right: 20px;
     }
+}
+
+.msgSend {
+    display: none;
+    width: 100%;
+    margin: -15px 0 15px 0;
+    font-size: 80%;
+    color: #28a745;
+    text-align: center;
 }
