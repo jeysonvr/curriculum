@@ -1,10 +1,10 @@
 nav.navbar ul>li a:hover {
-    border-bottom: 5px solid #7c4dff;
+    border-bottom: 5px solid #32a3b5d9;
     text-decoration: none;
 }
 
 nav.navbar ul>li.active a {
-    border-bottom: 5px solid #7c4dff;
+    border-bottom: 5px solid #32a3b5d9;
     text-decoration: none;
 }
 
@@ -50,7 +50,7 @@ a.social-icon {
 }
 
 .action-button {
-    background: #7c4dff;
+    background: #32a3b5d9;
     color: #fff;
     font-size: 24px;
     width: 60px;
@@ -138,7 +138,7 @@ textarea {
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #7c4dff !important;
+    border-color: #32a3b5d9 !important;
     outline: 0;
     box-shadow: 0 0 0 0 rgba(0, 123, 255, .25);
 }
@@ -167,8 +167,12 @@ textarea {
     margin-bottom: 60px;
 }
 
+.slide-out-widget .instagram {
+    text-align: center;
+}
+
 .slide-out-header {
-    background: #7c4dff;
+    background: #32a3b5d9;
     padding: 30px;
     padding-top: 20px;
     color: #fff;
@@ -240,7 +244,7 @@ textarea {
     -o-transition: width .6s ease;
     transition: width .6s ease;
     line-height: 8px;
-    background-color: #7c4dff;
+    background-color: #32a3b5d9;
     box-shadow: none;
     position: relative;
     overflow: unset;
@@ -298,4 +302,50 @@ textarea {
 .languageSkill img,
 .conocimientoEspecifico .row img.animate {
     opacity: 0;
+}
+
+#section1 {
+    /* background-color: black; */
+}
+#section1 .blockInfo{
+    color: white;
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    background-color: #32a3b5d9;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 200px 0 0 200px;
+}
+
+#section1 .blockInfo hr{
+    border-color: white;
+} 
+
+.bgMain{
+    background-color: #32a3b5d9;
+}
+
+.blockInfo .btnDownload {
+    margin-top: 30px;
+    float: right;
+}
+
+.sections-wraper section{
+    background-color: white;
+}
+
+#section1{
+    background-color: unset;
+}
+
+@media (max-width: 999px) {
+    #section1 .blockInfo {
+        margin: 30px;
+    }
+    .header-action-button-wrapper {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+    }
 }

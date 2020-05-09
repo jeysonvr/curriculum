@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jey Vega</title>
+    <link  rel="icon"   href="images/icons/favicon.png" type="image/png" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <script src="js/jquery-3.1.1.min.js"></script>
+    
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -18,7 +20,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
         <a class="navbar-brand nav-link" href="section1">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,14 +51,22 @@
             </ul>
         </div>
         <div class="header-action-button-wrapper">
-            <a href="" class="header-action-button action-button"><i class="fas fa-plus"></i></a>
+            <a href="" class="header-action-button action-button" id="btnMoreOptions"><i class="fas fa-plus"></i></a>
         </div>
     </nav>
 
 
     <div class="sections">
         <div class="sections-wraper">
-            <section id="section1">abcasd</section>
+            <section id="section1">
+                <div class="blockInfo">
+                    <h4>Desarrollador Web Full Stack</h4>
+                    <hr>
+                    <p>Hola, soy Jeyson. Tengo 3 años de expieriencia en el desarrollo de aplicaciones. He trabajado en proyectos para optimizar el rendimiento de sitios web y mejorar la experiencia de usuario.</p>
+                    <a type="button" class="btn btn-info btnDownload" href="assets/pdf/Mi perfil.pdf" download="Perfil">Descargar perfil</a>
+                </div>
+                <!-- <div id="wrapper"></div> -->
+            </section>
             <section id="section2">abcasd</section>
             <section id="section3">
                 <div class="container">
@@ -215,7 +225,7 @@
                     <!-- end .col-sm-4 -->
                     <div class="col-sm-4">
                         <h4>Connect</h4>
-                        <div class="social-icons">
+                        <div class="social-icons"  id="socialMedia">
                             <a href="https://www.facebook.com/andres.vega.58" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="https://www.instagram.com/jey_vega/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="https://www.linkedin.com/in/jeyson-andr%C3%A9s-vega-romero-1973b1141/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -327,6 +337,14 @@
         </div>
         <!-- end .slide-out-widgets -->
     </div>
+
+
+    <!-- Background video -->
+    <script src="plugins/jquery.tubular.1.0.js"></script>
+
+    <!-- Tool Tip Guide! -->
+    <script src="plugins/tourtipguide/static/js/tourtipguide.js"></script>
+    <link rel="stylesheet" href="plugins/tourtipguide/static/css/tourtipguide.css">
 
     <script src="js/scripts.js"></script>
 

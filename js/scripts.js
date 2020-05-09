@@ -44,3 +44,79 @@ $('.nav-link[href="section3"]').click(function() {
     }, 510);
 
 });
+
+// Load background video
+
+console.log('se ejecuto');
+$('.sections').tubular({
+    videoId: 'HujI6v38Y0c',
+    wrapperZIndex: -1
+});
+
+
+// Tout tip guide
+
+$(document).ready(function($) {
+    if( $(document).width() > 999 ) {
+        $.ttgTour({
+            next   : "Siguiente",
+            prev   : "Anterior",
+            finish : "Lo tengo!",
+            elements:[{
+                id:      "navbar",
+                title:   "Conoce mi página",
+                content: "Aquí encontrarás mis experiencias y proyectos más recientes.",
+                img:     "plugins/tourtipguide/static/img/right_click.png"
+            },
+            {
+                id:      "btnMoreOptions",
+                title:   "¿Quieres contactarme?",
+                color:   "#5DB4D8",
+                content: "Dando clic aquí, podrás envirme un mensaje (y seguirme en instagram)",
+                fa:      "fa-envelope-o",
+                position:"bottom"
+            },
+            {
+                id:      "socialMedia",
+                title:   "Por último!",
+                color:   "#D75452",
+                fa:      "fa-star-o fa-spin",
+                content: "Si quieres conocer más de mi, aquí te dejo mis redes sociales",
+                img:     "plugins/tourtipguide/static/img/right_click.png",
+                position:"top"
+            }]
+        });
+    } else {
+        $(document).ready(function($) {
+
+			$.ttgSlideshow({
+				color: "#540DA9",
+				animation: "bounceIn",
+				closebutton: "Ok!",
+                elements:[{
+                        img: 'plugins/tourtipguide/static/img/comments.jpg',
+                        imgclass:'demoImg1', // I create custom class for a better style
+                        content: 'Conoce mi página <br><br> Aquí encontrarás mis experiencias y proyectos más recientes.'
+                    },
+                    {
+                        img: 'plugins/tourtipguide/static/img/touch.png',
+                        imgclass:'demoImg2', // I create custom class for a better style
+                        content: 'Podrás envirme un mensaje <b>y seguirme en instagram</b>'
+                    },
+                    {
+                        fa: 'fa-star-o fa-3x',
+                        iconcolor: "#1f7cba",
+                        content: 'También encontrarás mis redes sociales (Para que me conozcas más y te enteres de mis nuevos proyectos)'
+                    }]
+       		 });	
+		});
+    }
+
+});
+
+
+// 8XXwZXPej3Q
+// U6QMlmIeIG8
+// HujI6v38Y0c
+// XkagRCnJyV8
+// $("#wrapper").append(tubularContainer);
