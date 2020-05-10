@@ -90,13 +90,16 @@ a {
 }
 
 .slide-out {
-    width: 380px;
+    /* width: 380px; */
+    width: auto;
+    max-width: 445px;
     height: auto;
     overflow-y: scroll;
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -400px;
+    /* right: -400px; */
+    right: -700px;
     background: #fff;
     z-index: 1030;
     box-shadow: -2px 0 10px rgba(0, 0, 0, .4);
@@ -161,10 +164,11 @@ textarea {
 
 .slide-out-widget form {
     padding: 0 10px;
+    margin-top: 15px;
 }
 
 .slide-out-widget {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .slide-out-widget .instagram {
@@ -189,6 +193,10 @@ textarea {
     color: #fff;
 }
 
+.centered {
+    text-align: center;
+}
+
 .slide-out-header video {
     width: 100px;
     height: 100px;
@@ -197,7 +205,7 @@ textarea {
     border: 5px solid #fff;
     background: #e2e2e2;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
-    float: left;
+    /* float: left; */
     object-fit: cover;
 }
 
@@ -212,7 +220,7 @@ textarea {
 
 .slide-out-widgets {
     padding: 30px;
-    padding-top: 50px;
+    /* padding-top: 50px; */
 }
 
 .sections-wraper {
@@ -358,4 +366,80 @@ textarea {
     font-size: 80%;
     color: #28a745;
     text-align: center;
+}
+
+.gesture {
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 30px;
+    left: 50%;
+    opacity: 0;
+}
+
+.ani-gesture {
+    -webkit-animation: aniGesture 1.5s 3 ease-in-out;
+    -moz-animation: aniGesture 1.5s 3 ease-in-out;
+    -o-animation: aniGesture 1.5s 3 ease-in-out;
+}
+
+@-webkit-keyframes aniGesture {
+    0% {
+        -webkit-transform: translatex(-10px) translatey(0px);
+        opacity: 0;
+    }
+    20% {
+        -webkit-transform: translatex(0px) translatey(0px);
+        opacity: 1;
+    }
+    80% {
+        -webkit-transform: translatex(-200px) translatey(0px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translatex(-200px) translatey(0px);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes aniGesture {
+    0% {
+        -moz-transform: translatex(-10px) translatey(0px);
+        opacity: 0;
+    }
+    20% {
+        -moz-transform: translatex(0px) translatey(0px);
+        opacity: 1;
+    }
+    80% {
+        -moz-transform: translatex(-200px) translatey(0px);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: translatex(-200px) translatey(0px);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes aniGesture {
+    0% {
+        -o-transform: translatex(-10px) translatey(0px);
+        opacity: 0;
+    }
+    20% {
+        -o-transform: translatex(0px) translatey(0px);
+        opacity: 1;
+    }
+    80% {
+        -o-transform: translatex(-200px) translatey(0px);
+        opacity: 1;
+    }
+    100% {
+        -o-transform: translatex(-200px) translatey(0px);
+        opacity: 0;
+    }
+}
+
+textarea {
+    resize: none;
 }

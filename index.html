@@ -40,13 +40,7 @@
                     <a class="nav-link" href="section4">Experiencia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="section5">Educación</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="section6">Trabajos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="section7">Contacto</a>
+                    <a class="nav-link" href="section5">Trabajos</a>
                 </li>
             </ul>
         </div>
@@ -65,9 +59,19 @@
                     <p>Hola, soy Jeyson. Tengo 3 años de expieriencia en el desarrollo de aplicaciones. He trabajado en proyectos para optimizar el rendimiento de sitios web y mejorar la experiencia de usuario.</p>
                     <a type="button" class="btn btn-info btnDownload" href="assets/pdf/Mi perfil.pdf" download="Perfil">Descargar perfil</a>
                 </div>
-                <!-- <div id="wrapper"></div> -->
+                <div class="gesture d-lg-none ani-gesture">
+                    <img src="/images/gesture.svg" class="img-responsive">
+                </div>
             </section>
-            <section id="section2">abcasd</section>
+            <section id="section2">
+                <h5>Acerca</h5>
+                <ul>
+                    <li> Short description</li>
+                    <li>Picture</li>
+                    <li>What i'm doing: web & UX design, app development, webscrapping.</li>
+                    <li>Hobbies and interest: web research, travelling, book reading, music.</li>
+                </ul>
+            </section>
             <section id="section3">
                 <div class="container">
                     <h2>Habilidades</h2>
@@ -205,10 +209,25 @@
                 </div>
             </section>
 
-            <section id="section4">abcasd</section>
-            <section id="section5">abcasd</section>
-            <section id="section6">abcasd</section>
-            <section id="section7">abcasd</section>
+            <section id="section4">
+                <h5>Experiencia</h5>
+                <p>Linea del tiempo con fechas, cargos, tareas.</p>
+                <ul>
+                    <li>UIS</li>
+                    <li>OpenSky</li>
+                    <li>EGlobal Technology</li>
+                    <li>Homecenter (Sodimac Colombia)</li>
+                </ul>
+            </section>
+            <section id="section5">
+                <h5>Trabajos</h5>
+                <p>Pictres, links, videos of:</p>
+                <ul>
+                    <li>YMCA Santander web site</li>
+                    <li>ProSmart Solutions</li>
+                    <li>Avante</li>
+                </ul>
+            </section>
         </div>
     </div>
 
@@ -224,7 +243,7 @@
                     </div>
                     <!-- end .col-sm-4 -->
                     <div class="col-sm-4">
-                        <h4>Connect</h4>
+                        <h4>Redes sociales</h4>
                         <div class="social-icons" id="socialMedia">
                             <a href="https://www.facebook.com/andres.vega.58" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="https://www.instagram.com/jey_vega/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -259,7 +278,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 centered">
                     <video autoplay loop muted>
                         <source src="videos/profile.mp4" type="video/mp4">
                     </video>
@@ -273,49 +292,34 @@
         <!-- end .slide-out-header -->
         <div class="slide-out-widgets">
             <div class="slide-out-widget">
-                <h4>Drink A Coffee With Me Today</h4>
+                <h4>¿Necesitas ayuda?</h4>
                 <script type="text/javascript">
                     var submitted = false;
                 </script>
                 <form class="needs-validation" novalidate name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSewJTae9yDzaEMbn_mYFAuSSaALB1iXuWiQBju-bxvI6zsTzg/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
                     <!-- <form class="needs-validation" novalidate name="gform" id="gform" enctype="text/plain" action="" target="hidden_iframe" onsubmit="submitted=true;"> -->
-                    <div class="form-row">
-                        <div class="col-md-3 mb-3">
+                    <div class="form-row my-4">
+                        <div class="col-md-3">
                             <label for="validationCustom01">Nombre</label>
                         </div>
-                        <div class="col-md-9 mb-3">
-                            <input type="text" class="form-control" value="" name="entry.463664636" id="entry.463664636" required>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" value="" name="entry.463664636" id="entry.463664636" minlength="5" required>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="col-md-3 mb-3">
+                    <div class="form-row my-4">
+                        <div class="col-md-3">
                             <label for="validationCustom01">Correo</label>
                         </div>
-                        <div class="col-md-9 mb-3">
-                            <input type="text" class="form-control" value="" name="entry.1564831676" id="entry.1564831676" required>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control" value="" name="entry.1564831676" id="entry.1564831676" aria-describedby="emailHelp" placeholder="nombre@ejemplo.com" required>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="col-md-3 mb-3">
+                    <div class="form-row my-4">
+                        <div class="col-md-3">
                             <label for="validationCustom01">Mensaje</label>
                         </div>
-                        <div class="col-md-9 mb-3">
-                            <input type="text" class="form-control" value="" name="entry.754622623" id="entry.754622623" required>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                        <div class="col-md-9">
+                            <textarea type="text" class="form-control" value="" name="entry.754622623" id="entry.754622623" autocomplete="off" rows=3 minlength="10" required></textarea>
                         </div>
                     </div>
                     <div class="col align-self-center" style="text-align: center;">

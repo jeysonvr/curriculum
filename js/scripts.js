@@ -120,15 +120,6 @@ $(document).ready(function($) {
 });
 
 
-// Contact form Google
-$('#gform').on('submit', function(e) {
-    setTimeout(() => {
-        $('#gform')[0].reset();
-        $('#gform div').last().before('<div class="msgSend">Tu mensaje se ha enviado!</div>');
-        $('#gform .msgSend').fadeIn(1000);
-    }, 1000);
-    // $('#gform').prepend('');
-});
 
 // 8XXwZXPej3Q
 // U6QMlmIeIG8
@@ -150,3 +141,58 @@ function setCookie(cname, cvalue, exdays) {
     var expires = "expires = " + d.toGMTString();
     document.cookie = cname + "=" + cvalue + " ; " + expires + "; path=/;";
 }
+
+
+// Swipe event
+$(document).ready(function() {
+    let initialPos = 0;
+    let finalPos = 0;
+
+    let = $(document).width() * ($('.sections-wraper section').length - 1);
+
+    $('.sections-wraper').on('touchstart', function(e) {
+        initialPos = e.originalEvent.touches[0].pageX;
+    });
+
+    $('.sections-wraper').on('touchend', function(e) {
+        finalPos = e.changedTouches[0].pageX;
+        validateScroll();
+    });
+
+    const validateScroll = () => {
+        if (finalPos > (initialPos + 60)) {
+            $('.nav-item.active').prev().children(0).click();
+
+        } else if (finalPos < (initialPos - 60)) {
+            $('.nav-item.active').next().children(0).click();
+        }
+    }
+
+});
+
+
+// Validate form
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    // Contact form Google
+                    setTimeout(() => {
+                        $('#gform')[0].reset();
+                        $('#gform div').last().before('<div class="msgSend">Tu mensaje se ha enviado!</div>');
+                        $('#gform .msgSend').fadeIn(1000);
+                    }, 1000);
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
