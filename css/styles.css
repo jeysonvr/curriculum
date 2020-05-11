@@ -40,6 +40,7 @@ a.social-icon {
     width: 120px;
     height: 20px;
     display: inline-block;
+    z-index: 1;
 }
 
 .header-action-button {
@@ -312,10 +313,6 @@ textarea {
     opacity: 0;
 }
 
-#section1 {
-    /* background-color: black; */
-}
-
 #section1 .blockInfo {
     color: white;
     width: auto;
@@ -342,6 +339,9 @@ textarea {
 
 .sections-wraper section {
     background-color: white;
+    max-height: 700px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #section1 {
@@ -442,4 +442,162 @@ textarea {
 
 textarea {
     resize: none;
+}
+
+.full-image {
+    object-fit: cover;
+    height: 100%;
+}
+
+.service {
+    background: #fff;
+    text-align: center;
+    padding: 10px 0;
+    color: #232323;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    -o-transition: .25s;
+    -ms-transition: .25s;
+    transition: .25s;
+    margin-bottom: 24px;
+}
+
+.service .icon {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .service {
+        height: 90%
+    }
+    .service h6 {
+        font-size: 13px;
+    }
+}
+
+.grid-item {
+    width: 330px;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.grid-item p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.grid-item img {
+    width: 100%;
+}
+
+#section5 {
+    background-color: #E9E9E9;
+    padding: 20px;
+}
+
+.experience-block {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.experience-block .meta {
+    width: 20%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    position: relative;
+    float: left;
+    margin-top: 39px;
+}
+
+.experience-block .meta .year {
+    display: block;
+    background: #32a3b5d9;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 36px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.experience-block .meta .company {
+    display: block;
+    background: #fff;
+    color: #232323;
+    text-align: center;
+    font-size: 15px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.experience-block .content {
+    width: 60%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    background: #fff;
+    position: relative;
+    padding: 20px 30px;
+    float: right;
+    margin-top: 39px;
+}
+
+.experience-block .content h5 {
+    margin-bottom: 6px;
+}
+
+.experience-block .content p:last-of-type {
+    margin-bottom: 0;
+}
+
+.experience-block .icon {
+    display: block;
+    width: 78px;
+    height: 78px;
+    line-height: 78px;
+    text-align: center;
+    background: #fff;
+    border: 5px solid #e5e5e5;
+    border-radius: 100%;
+    font-size: 36px;
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    margin-left: -39px;
+    z-index: 2;
+}
+
+.experience-block .line {
+    display: block;
+    height: 100%;
+    width: 2px;
+    border-left: 2px dashed #32a3b5d9;
+    position: absolute;
+    top: 0;
+    left: 30%;
+}
+
+@media (max-width: 768px) {
+    .experience-block .meta {
+        width: 60%;
+        float: right;
+        margin-top: 12px;
+    }
+    .experience-block .content {
+        margin-top: 12px;
+        width: 80%;
+        padding: 10px 20px;
+    }
+    .experience-block .icon {
+        left: 0;
+        margin-left: 0;
+    }
+    .experience-block .line {
+        left: 38px;
+    }
 }

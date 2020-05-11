@@ -15,13 +15,18 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="fonts/fontawesome5.13.0/css/all.css">
+    <!-- <link rel="stylesheet" href="css/masonry-docs.css"> -->
+
+    <script src="js/masonry.pkgd.min.js"></script>
 
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-        <a class="navbar-brand nav-link" href="section1">Navbar</a>
+        <a class="navbar-brand nav-link" href="section1">
+            <img src="images/icons/test.png" alt="">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,13 +69,75 @@
                 </div>
             </section>
             <section id="section2">
-                <h5>Acerca</h5>
-                <ul>
-                    <li> Short description</li>
-                    <li>Picture</li>
-                    <li>What i'm doing: web & UX design, app development, webscrapping.</li>
-                    <li>Hobbies and interest: web research, travelling, book reading, music.</li>
-                </ul>
+                <div class="row h-100">
+                    <div class="col-xs-12 col-md-6 p-5 text-justify">
+                        <h4>Acerca de mi</h4>
+                        <hr>
+                        <h5>Jeyson Vega</h5>
+                        <h6>Desarrollador web full stack</h6>
+                        <P>Ingeniero de sistemas con experiencia en el desarrollo de aplicaciones web y de escritorio, gestión de procesos de negocio y conocimiento de diferentes lenguajes de programación.</P>
+                        <p>Disfruto de mi trabajo, de enseñar todo lo relacionado con tecnología que esté a mi alcance, y de adquirir nuevos conocimientos día a día.</p>
+
+                        <h6>¿Qué estoy haciendo?</h6>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="service">
+                                    <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                                    <h6>Experiencia de usuario (UX)</h6>
+                                </div>
+                                <!-- end .service -->
+                            </div>
+                            <!-- end .col-sm-4 -->
+                            <div class="col-4">
+                                <div class="service">
+                                    <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                                    <h6>Desarrollo de aplicaciones</h6>
+                                </div>
+                                <!-- end .service -->
+                            </div>
+                            <!-- end .col-sm-4 -->
+                            <div class="col-4">
+                                <div class="service">
+                                    <div class="icon"><i class="fab fa-node-js"></i></div>
+                                    <h6>web scrapping (extracción)</h6>
+                                </div>
+                                <!-- end .service -->
+                            </div>
+                            <!-- end .col-sm-4 -->
+                        </div>
+
+                        <h6>Mis hobbies</h6>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="service">
+                                    <div class="icon"><i class="fas fa-guitar"></i></div>
+                                    <h6>Música</h6>
+                                </div>
+                                <!-- end .service -->
+                            </div>
+                            <!-- end .col-sm-4 -->
+                            <div class="col-4">
+                                <div class="service">
+                                    <div class="icon"><i class="fas fa-plane-departure"></i></div>
+                                    <h6>Viajar</h6>
+                                </div>
+                                <!-- end .service -->
+                            </div>
+                            <!-- end .col-sm-4 -->
+                            <div class="col-4">
+                                <div class="service">
+                                    <div class="icon"><i class="fas fa-book"></i></div>
+                                    <h6>Libros</h6>
+                                </div>
+                                <!-- end .service -->
+                            </div>
+                            <!-- end .col-sm-4 -->
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img src="images/ownPicture2.png" class="full-image w-100" alt="">
+                    </div>
+                </div>
             </section>
             <section id="section3">
                 <div class="container">
@@ -210,23 +277,114 @@
             </section>
 
             <section id="section4">
-                <h5>Experiencia</h5>
-                <p>Linea del tiempo con fechas, cargos, tareas.</p>
-                <ul>
-                    <li>UIS</li>
-                    <li>OpenSky</li>
-                    <li>EGlobal Technology</li>
-                    <li>Homecenter (Sodimac Colombia)</li>
-                </ul>
+                <div class="container">
+                    <h4>3 años de experiencia</h4>
+                    <div class="experience-timeline">
+                        <div class="experience-block clearfix">
+                            <div class="meta">
+                                <span class="year">2019 - Actual</span>
+                                <span class="company">Homecenter</span>
+                            </div>
+                            <div class="content">
+                                <h5>Web Developer</h5>
+                                <p>Desarrollo de aplicaciones web y administración de tags a través de Dynamic Tag Manager. Automatización de tareas y webscrapping.</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="experience-block clearfix">
+                            <div class="meta">
+                                <span class="year">2018</span>
+                                <span class="company">EGlobal Technology</span>
+                            </div>
+                            <div class="content">
+                                <h5>Junior Developer</h5>
+                                <p>Análisis de requerimientos, Desarrollo de aplicaciones orientadas a sistemas de automatización en lenguaje C#, aplicaciones en WPF, servicios WCF.</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fab fa-windows"></i>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="experience-block clearfix">
+                            <div class="meta">
+                                <span class="year">2017</span>
+                                <span class="company">OpenSky</span>
+                            </div>
+                            <div class="content">
+                                <h5>Web Developer</h5>
+                                <p>Administración de procesos de negocio (BPM) con herramienta Fujitsu Run My Process. Mantenimiento y actualización de sitios web, Soporte a clientes.</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="experience-block clearfix">
+                            <div class="meta">
+                                <span class="year">2016</span>
+                                <span class="company">UIS</span>
+                            </div>
+                            <div class="content">
+                                <h5>Auxiliar administrativo</h5>
+                                <p>Diseño y desarrollo de aplicaciones en vba (macros). Configuraciones y desarrollo de plugins para moodle (PHP).</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fab fa-php"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section id="section5">
-                <h5>Trabajos</h5>
-                <p>Pictres, links, videos of:</p>
-                <ul>
-                    <li>YMCA Santander web site</li>
-                    <li>ProSmart Solutions</li>
-                    <li>Avante</li>
-                </ul>
+                <h4>Trabajos en los que he participado</h4>
+
+                <div class="grid">
+                    <div class="grid-item">
+                        <img src="images/ymca_01.PNG" alt="">
+                        <hr>
+                        <p>YMCA Santander (
+                            <a href="https://www.ymcasantander.org" target="_blank">Ver más</a> )
+                        </p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="images/avante_01.PNG" alt="">
+                        <hr>
+                        <p>Avante Global School (
+                            <a href="https://www.avanteglobalschool.com/" target="_blank">Ver más</a> )
+                        </p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="images/prosmart_01.PNG" alt="">
+                        <hr>
+                        <p>ProSmart Solutions (
+                            <a href="https://prosmart.com.co/" target="_blank">Ver más</a> )
+                        </p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="images/homecenter_01.PNG" alt="">
+                        <hr>
+                        <p>Homecenter: Persianas a la medida (
+                            <a href="https://www.homecenter.com.co/homecenter-co/persianas-a-la-medida" target="_blank">Ver más</a> )
+                        </p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="images/puraskinlab_01.PNG" alt="">
+                        <hr>
+                        <p>Pura Skin Lab (
+                            <a href="https://puraskinlab.com/" target="_blank">Ver más</a> )
+                        </p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="images/homecenter_02.PNG" alt="">
+                        <hr>
+                        <p>Homecenter: Puertas a la medida (
+                            <a href="https://www.homecenter.com.co/homecenter-co/puertas-a-la-medida" target="_blank">Ver más</a> )
+                        </p>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

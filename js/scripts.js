@@ -65,13 +65,14 @@ $(document).ready(function($) {
                 elements: [{
                         id: "navbarOptions",
                         title: "Conoce mi página",
+                        color: "#32a3b5d9",
                         content: "Aquí encontrarás mis experiencias y proyectos más recientes.",
-                        img: "plugins/tourtipguide/static/img/right_click.png"
+                        img: "images/icons/test.png"
                     },
                     {
                         id: "btnMoreOptions",
                         title: "¿Quieres contactarme?",
-                        color: "#5DB4D8",
+                        color: "#32a3b5d9",
                         content: "Dando clic aquí, podrás envirme un mensaje (y seguirme en instagram)",
                         fa: "fa-envelope-o",
                         position: "bottom"
@@ -79,7 +80,7 @@ $(document).ready(function($) {
                     {
                         id: "socialMedia",
                         title: "Por último!",
-                        color: "#D75452",
+                        color: "#32a3b5d9",
                         fa: "fa-star-o fa-spin",
                         content: "Si quieres conocer más de mi, aquí te dejo mis redes sociales",
                         img: "plugins/tourtipguide/static/img/right_click.png",
@@ -91,22 +92,21 @@ $(document).ready(function($) {
             $(document).ready(function($) {
 
                 $.ttgSlideshow({
-                    color: "#540DA9",
+                    color: "#32a3b5d9",
                     animation: "bounceIn",
                     closebutton: "Ok!",
                     elements: [{
-                            img: 'plugins/tourtipguide/static/img/comments.jpg',
-                            imgclass: 'demoImg1', // I create custom class for a better style
+                            img: 'images/icons/test.png',
+                            imgclass: 'demoImg1',
                             content: 'Conoce mi página <br><br> Aquí encontrarás mis experiencias y proyectos más recientes.'
                         },
                         {
-                            img: 'plugins/tourtipguide/static/img/touch.png',
-                            imgclass: 'demoImg2', // I create custom class for a better style
+                            img: 'images/ttg/moreOptions.png',
+                            imgclass: 'demoImg2',
                             content: 'Podrás envirme un mensaje <b>y seguirme en instagram</b>'
                         },
                         {
-                            fa: 'fa-star-o fa-3x',
-                            iconcolor: "#1f7cba",
+                            img: 'images/ttg/socialMedia.png',
                             content: 'También encontrarás mis redes sociales (Para que me conozcas más y te enteres de mis nuevos proyectos)'
                         }
                     ]
@@ -196,3 +196,17 @@ $(document).ready(function() {
         });
     }, false);
 })();
+
+
+// Masonry
+$(document).ready(function() {
+    setTimeout(() => {
+
+        $('.grid').masonry({
+            // set itemSelector so .grid-sizer is not used in layout
+            itemSelector: '.grid-item',
+            columnWidth: 350
+                // percentPosition: false
+        });
+    }, 1000);
+})
