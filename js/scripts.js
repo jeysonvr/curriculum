@@ -46,10 +46,10 @@ $('.nav-link[href="section3"]').click(function() {
 });
 
 // Load background video
-$('.sections').tubular({
-    videoId: 'HujI6v38Y0c',
-    wrapperZIndex: -1
-});
+// $('.sections').tubular({
+//     videoId: 'HujI6v38Y0c',
+//     wrapperZIndex: -1
+// });
 
 
 // Tout tip guide

@@ -34,31 +34,61 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', e => {
 
-    // 2. Cache with network fallback
-    const respuesta = caches.match(e.request)
-        .then(res => {
-            if (res) return res;
+    // Network with cache fallback
+    const respuesta = fetch(e.request).then(res => {
 
-            // No existe el archivo
+            caches.open('cache-v1.0')
+                .then(cache => {
+                    // cache.put(e.request, res);
+                });
 
-            return fetch(e.request).then(newResp => {
-                caches.open('cache-v1.0')
-                    .then(cache => {
-                        cache.put(e.request, newResp);
-                    });
-
-                return newResp.clone();
-            });
+            return res.clone();
         })
         .catch(err => {
+            // if (caches.match(e.request)) {
+            //     return caches.match(e.request);
+            // }
+
+            if (e.request.url.includes('offline')) {
+                return caches.match(e.request);
+            }
+
             if (e.request.headers.get('accept').includes('text/html')) {
                 console.log('entra');
                 return caches.match('/offline/offline.html');
             }
-        });
-
+        })
 
     e.respondWith(respuesta);
+
+
+
+    // const respuesta = caches.match(e.request)
+    //     .then(res => {
+    //         if (res) return res;
+
+    //         // No existe el archivo
+
+    //         return fetch(e.request).then(newResp => {
+    //             caches.open('cache-v1.0')
+    //                 .then(cache => {
+    //                     cache.put(e.request, newResp);
+    //                 })
+    //                 .catch(err => {
+    //                     console.log(err);
+    //                 });
+
+    //             return newResp.clone();
+    //         });
+    //     })
+    //     .catch(err => {
+    //         if (e.request.headers.get('accept').includes('text/html')) {
+    //             console.log('entra');
+    //             return caches.match('/offline/offline.html');
+    //         }
+    //     });
+
+
 });
 
 self.addEventListener('sync', event => {
