@@ -90,7 +90,7 @@ $(document).ready(function($) {
                     animation: "bounceIn",
                     closebutton: "Ok!",
                     elements: [{
-                            img: 'images/icons/test.png',
+                            img: 'images/icons/logo.png',
                             imgclass: 'demoImg1',
                             content: 'Conoce mi página <br><br> Aquí encontrarás mis experiencias y proyectos más recientes.'
                         },
