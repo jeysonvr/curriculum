@@ -95,7 +95,7 @@ $(document).ready(function($) {
                             content: 'Conoce mi página <br><br> Aquí encontrarás mis experiencias y proyectos más recientes.'
                         },
                         {
-                            img: 'images/ttg/moreOptions.png',
+                            img: 'images/ttg/moreOptions1.png',
                             imgclass: 'demoImg2',
                             content: 'Podrás envirme un mensaje <b>y seguirme en instagram</b>'
                         },
