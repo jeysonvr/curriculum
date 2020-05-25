@@ -1,6 +1,33 @@
 var amound_diamonds = 30;
 var amound_boobles = 30;
 
+var diamondsLimit_min = 50;
+var diamondsLimit_max = 250;
+
+var timer_position = window.innerWidth * 0.8;
+
+var finalMessageStyle = {
+    font: 'bold 40pt Arial',
+    fill: '#FFFFFF',
+    align: 'center'
+};
+
+if (window.innerWidth < 600) {
+    amound_diamonds = 10;
+    amound_boobles = 10;
+
+    finalMessageStyle = {
+        font: 'bold 18pt Arial',
+        fill: '#FFFFFF',
+        align: 'center'
+    };
+
+    diamondsLimit_min = 0;
+    diamondsLimit_max = 0;
+
+    timer_position = window.innerWidth * 0.9;
+}
+
 GamePlayManager = {
     init: function() {
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -33,8 +60,8 @@ GamePlayManager = {
         // Decoration
         this.boobleArray = [];
         for (var i = 0; i < amound_boobles; i++) {
-            var xBooble = game.rnd.integerInRange(1, 1140);
-            var yBooble = game.rnd.integerInRange(600, 950);
+            var xBooble = game.rnd.integerInRange(1, window.innerWidth);
+            var yBooble = game.rnd.integerInRange(window.innerHeight - 50, window.innerHeight);
 
             var booble = game.add.sprite(xBooble, yBooble, 'booble' + game.rnd.integerInRange(1, 2));
             booble.vel = 0.2 + game.rnd.frac() * 2;
@@ -53,37 +80,33 @@ GamePlayManager = {
         this.horse.x = game.width / 2;
         this.horse.y = game.height / 2;
         this.horse.anchor.setTo(0.5, 0.5);
-        // this.horse.scale.setTo(2, 1);
-        // this.horse.angle = 90;
-        // this.horse.alpha = 0.1;
         game.input.onDown.add(this.onTap, this);
 
+
+        // Load diamonds
         this.diamonds = [];
         for (var i = 0; i < amound_diamonds; i++) {
             var diamond = game.add.sprite(100, 100, 'diamonds');
             diamond.frame = game.rnd.integerInRange(0, 3);
             diamond.scale.setTo(0.30 + game.rnd.frac());
             diamond.anchor.setTo(0.5);
-            diamond.x = game.rnd.integerInRange(50, 1050);
-            diamond.y = game.rnd.integerInRange(50, 600);
+            diamond.x = game.rnd.integerInRange(50, window.innerWidth - 250);
+            diamond.y = game.rnd.integerInRange(50, window.innerHeight - 250);
 
             this.diamonds[i] = diamond;
 
             var rectCurrentDiamond = this.getBoundsDiamond(diamond);
             var rectHorse = this.getBoundsDiamond(this.horse);
             while (this.isOverLappingOtherDiamond(i, rectCurrentDiamond) || this.isRectangleOverLapping(rectHorse, rectCurrentDiamond)) {
-                diamond.x = game.rnd.integerInRange(50, 1050);
-                diamond.y = game.rnd.integerInRange(50, 600);
+                diamond.x = game.rnd.integerInRange(diamondsLimit_min, window.innerWidth - diamondsLimit_max);
+                diamond.y = game.rnd.integerInRange(diamondsLimit_min, window.innerHeight - diamondsLimit_max);
                 rectCurrentDiamond = this.getBoundsDiamond(diamond);
             }
 
         }
 
-
+        // Include explosion 
         this.explosionGroup = game.add.group();
-        // this.explosionGroup.create(200, 200, 'explosion');
-        // this.explosionGroup.create(400, 200, 'explosion');
-        // this.explosionGroup.scale.setTo(0.5);
         for (var i = 0; i < 10; i++) {
             this.explosion = this.explosionGroup.create(100, 100, 'explosion');
 
@@ -98,12 +121,7 @@ GamePlayManager = {
             this.explosion.anchor.setTo(0.5);
             this.explosion.kill();
         }
-        // this.explosion = game.add.sprite(100, 100, 'explosion');
-        // var tween = game.add.tween(explosion);
-        // tween.to({ x: 500, y: 100 }, 1500, Phaser.Easing.Exponential.Out);
-        // tween.start();
 
-        // TEXTOS
 
         // Puntaje
         this.currentScore = 0;
@@ -117,7 +135,7 @@ GamePlayManager = {
 
         // Timer
         this.totalTime = 30;
-        this.timerText = game.add.text(1000, 40, this.totalTime, style);
+        this.timerText = game.add.text(timer_position, 40, this.totalTime, style);
         this.timerText.anchor.setTo(0.5);
         this.timerGameOver = game.time.events.loop(Phaser.Timer.SECOND, function() {
             if (this.flagFirstMouseDown) {
@@ -162,12 +180,8 @@ GamePlayManager = {
         var bg = game.add.sprite(0, 0, bgAlpha);
         bg.alpha = 0.5;
 
-        var style = {
-            font: 'bold 60pt Arial',
-            fill: '#FFFFFF',
-            align: 'center'
-        }
-        this.textFieldFinalMsg = game.add.text(game.width / 2, game.height / 2, msg, style);
+
+        this.textFieldFinalMsg = game.add.text(game.width / 2, game.height / 2, msg, finalMessageStyle);
         this.textFieldFinalMsg.anchor.setTo(0.5);
     },
     onTap: function() {
@@ -290,7 +304,12 @@ GamePlayManager = {
     }
 }
 
-var game = new Phaser.Game(1136, 640, Phaser.AUTO);
+if (window.innerWidth < 600) {
+    var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS);
+} else {
+    var game = new Phaser.Game(1136, 640, Phaser.CANVAS);
+}
+
 
 game.state.add('gameplay', GamePlayManager);
 game.state.start('gameplay');

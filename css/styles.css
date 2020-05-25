@@ -344,8 +344,18 @@ textarea {
     overflow-x: hidden;
 }
 
-#section1 {
+
+/* #section1 {
     background-color: unset;
+} */
+
+section#section1 {
+    background: url("../images/mainBG.png");
+    overflow-y: auto;
+}
+
+section#section2 {
+    overflow-y: auto;
 }
 
 @media (max-width: 999px) {

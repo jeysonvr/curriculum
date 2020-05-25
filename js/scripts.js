@@ -45,12 +45,6 @@ $('.nav-link[href="section3"]').click(function() {
 
 });
 
-// Load background video
-// $('.sections').tubular({
-//     videoId: 'HujI6v38Y0c',
-//     wrapperZIndex: -1
-// });
-
 
 // Tout tip guide
 
@@ -106,7 +100,7 @@ $(document).ready(function($) {
                             content: 'Podrás envirme un mensaje <b>y seguirme en instagram</b>'
                         },
                         {
-                            img: 'images/ttg/socialMedia.png',
+                            img: 'images/ttg/socialMedia1.png',
                             content: 'También encontrarás mis redes sociales (Para que me conozcas más y te enteres de mis nuevos proyectos)'
                         }
                     ]
@@ -119,13 +113,6 @@ $(document).ready(function($) {
 
 });
 
-
-
-// 8XXwZXPej3Q
-// U6QMlmIeIG8
-// HujI6v38Y0c
-// XkagRCnJyV8
-// $("#wrapper").append(tubularContainer);
 
 
 // Cookies functions
