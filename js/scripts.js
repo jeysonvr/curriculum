@@ -61,7 +61,7 @@ $(document).ready(function($) {
                         title: "Conoce mi página",
                         color: "#32a3b5d9",
                         content: "Aquí encontrarás mis experiencias y proyectos más recientes.",
-                        img: "images/icons/test.png"
+                        img: "images/icons/logo.png"
                     },
                     {
                         id: "btnMoreOptions",

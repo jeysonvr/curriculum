@@ -183,6 +183,18 @@ GamePlayManager = {
 
         this.textFieldFinalMsg = game.add.text(game.width / 2, game.height / 2, msg, finalMessageStyle);
         this.textFieldFinalMsg.anchor.setTo(0.5);
+
+        // place the reset button
+        var resetButton = this.game.add.text(game.width / 2, game.height / 2 + 50, 'Reiniciar', {
+            font: "20px Arial",
+            fontWeight: 'bold',
+            fill: "#FFFFFF"
+        });
+        resetButton.anchor.setTo(0.5);
+        resetButton.inputEnabled = true;
+        resetButton.events.onInputDown.add(function() {
+            location.reload();
+        }, this);
     },
     onTap: function() {
         if (!this.flagFirstMouseDown) {

@@ -19,6 +19,7 @@ self.addEventListener('install', event => {
                 '/offline/assets/images/horse.png',
                 '/offline/assets/images/mollusk.png',
                 '/offline/assets/images/shark.png',
+                '/offline/assets/images/favicon.png',
                 '/offline/src/GamePlay.js',
                 '/offline/src/phaser.min.js',
                 '/offline/offline.html'
