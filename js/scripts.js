@@ -1,5 +1,13 @@
 $('.header-action-button').on('click', function(event) {
     event.preventDefault();
+
+    // Lazy load
+    $('.slide-out source[data-srcset]').each(function() {
+        var imgUrl = $(this).attr('data-srcset');
+        $(this).removeAttr('data-srcset');
+        $(this).attr('srcset', imgUrl);
+    });
+
     $('.slide-out-overlay').fadeIn(250);
     $('.slide-out').addClass('open');
 });
@@ -21,6 +29,27 @@ $('.nav-link').click(function(e) {
     var nextPosition = $('#' + hrefTarget).position().left;
     var prevPosition = $('.sections-wraper').scrollLeft();
 
+    // Load images
+    var lazyImg = $('#' + hrefTarget + ' source[data-srcset]');
+    if (lazyImg.length > 0) {
+        lazyImg.each(function() {
+            var imageUrl = $(this).attr('data-srcset');
+            $(this).removeAttr('data-srcset');
+            $(this).attr('srcset', imageUrl);
+        });
+
+        // Masonry
+        if (hrefTarget === 'section5') {
+            $.getScript('../js/masonry.pkgd.min.js', function() {
+                setTimeout(() => {
+                    $('.grid').masonry({
+                        itemSelector: '.grid-item',
+                        columnWidth: 350
+                    });
+                }, 500);
+            });
+        }
+    }
 
     $('.sections-wraper').animate({ scrollLeft: prevPosition + nextPosition }, 500);
     $('.active').removeClass('active');
@@ -46,73 +75,87 @@ $('.nav-link[href="section3"]').click(function() {
 });
 
 
-// Tout tip guide
-
+// Tour tip guide
 $(document).ready(function($) {
     if (!getCookie('ttg')) {
 
-        if ($(document).width() > 999) {
-            $.ttgTour({
-                next: "Siguiente",
-                prev: "Anterior",
-                finish: "Lo tengo!",
-                elements: [{
-                        id: "navbarOptions",
-                        title: "Conoce mi página",
-                        color: "#32a3b5d9",
-                        content: "Aquí encontrarás mis experiencias y proyectos más recientes.",
-                        img: "images/icons/logo.png"
-                    },
-                    {
-                        id: "btnMoreOptions",
-                        title: "¿Quieres contactarme?",
-                        color: "#32a3b5d9",
-                        content: "Dando clic aquí, podrás envirme un mensaje (y seguirme en instagram)",
-                        fa: "fa-envelope-o",
-                        position: "bottom"
-                    },
-                    {
-                        id: "socialMedia",
-                        title: "Por último!",
-                        color: "#32a3b5d9",
-                        fa: "fa-star-o fa-spin",
-                        content: "Si quieres conocer más de mi, aquí te dejo mis redes sociales",
-                        img: "plugins/tourtipguide/static/img/right_click.png",
-                        position: "top"
-                    }
-                ]
-            });
-        } else {
-            $(document).ready(function($) {
+        // Include tour tip guide plugins
+        $.getScript('../plugins/tourtipguide/static/js/tourtipguide.min.js', function() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'plugins/tourtipguide/static/css/tourtipguide.css';
+            document.getElementsByTagName('HEAD')[0].appendChild(link);
 
-                $.ttgSlideshow({
-                    color: "#32a3b5d9",
-                    animation: "bounceIn",
-                    closebutton: "Ok!",
-                    elements: [{
-                            img: 'images/icons/logo.png',
-                            imgclass: 'demoImg1',
-                            content: 'Conoce mi página <br><br> Aquí encontrarás mis experiencias y proyectos más recientes.'
-                        },
-                        {
-                            img: 'images/ttg/moreOptions1.png',
-                            imgclass: 'demoImg2',
-                            content: 'Podrás envirme un mensaje <b>y seguirme en instagram</b>'
-                        },
-                        {
-                            img: 'images/ttg/socialMedia1.png',
-                            content: 'También encontrarás mis redes sociales (Para que me conozcas más y te enteres de mis nuevos proyectos)'
-                        }
-                    ]
-                });
-            });
-        }
-        setCookie('ttg', 'true', 365);
+            setTimeout(() => {
+                if ($(document).width() > 999) {
+                    $.ttgTour({
+                        next: "Siguiente",
+                        prev: "Anterior",
+                        finish: "Lo tengo!",
+                        elements: [{
+                                id: "navbarOptions",
+                                title: "Conoce mi página",
+                                color: "#32a3b5d9",
+                                content: "Aquí encontrarás mis experiencias y proyectos más recientes.",
+                                img: "images/icons/logo.png"
+                            },
+                            {
+                                id: "btnMoreOptions",
+                                title: "¿Quieres contactarme?",
+                                color: "#32a3b5d9",
+                                content: "Dando clic aquí, podrás envirme un mensaje (y seguirme en instagram)",
+                                fa: "fa-envelope-o",
+                                position: "bottom"
+                            },
+                            {
+                                id: "socialMedia",
+                                title: "Por último!",
+                                color: "#32a3b5d9",
+                                fa: "fa-star-o fa-spin",
+                                content: "Si quieres conocer más de mi, aquí te dejo mis redes sociales",
+                                img: "plugins/tourtipguide/static/img/right_click.png",
+                                position: "top"
+                            }
+                        ]
+                    });
+                } else {
+                    $(document).ready(function($) {
+
+                        $.ttgSlideshow({
+                            color: "#32a3b5d9",
+                            animation: "bounceIn",
+                            closebutton: "Ok!",
+                            elements: [{
+                                    img: 'images/icons/logo.png',
+                                    imgclass: 'demoImg1',
+                                    content: 'Conoce mi página <br><br> Aquí encontrarás mis experiencias y proyectos más recientes.'
+                                },
+                                {
+                                    img: 'images/ttg/moreOptions1.png',
+                                    imgclass: 'demoImg2',
+                                    content: 'Podrás envirme un mensaje <b>y seguirme en instagram</b>'
+                                },
+                                {
+                                    img: 'images/ttg/socialMedia1.png',
+                                    content: 'También encontrarás mis redes sociales (Para que me conozcas más y te enteres de mis nuevos proyectos)'
+                                }
+                            ]
+                        });
+                    });
+                }
+                setCookie('ttg', 'true', 365);
+            }, 500);
+
+
+        });
+
+
+
     }
 
 
 });
-
 
 
 // Cookies functions
@@ -183,17 +226,3 @@ $(document).ready(function() {
         });
     }, false);
 })();
-
-
-// Masonry
-$(document).ready(function() {
-    setTimeout(() => {
-
-        $('.grid').masonry({
-            // set itemSelector so .grid-sizer is not used in layout
-            itemSelector: '.grid-item',
-            columnWidth: 350
-                // percentPosition: false
-        });
-    }, 1000);
-})
